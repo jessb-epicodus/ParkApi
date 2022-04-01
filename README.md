@@ -43,10 +43,12 @@ An API that functions as a US Parks archive for national, state and city parks. 
 * Install MySQL Workbench: [Download and install the appropriate version of MySQL Workbench](https://dev.mysql.com/downloads/workbench/)
 * Install Postman: (Optional) [Download and install Postman](https://www.postman.com/downloads/)
 * Clone Repo: In your terminal, navigate to your desktop or other desired location and enter `git clone https://github.com/jessb-epicodus/USParkAPI.Solution.git`
-* Add Required Packages: Navigate to the top level of the project directory called _USPark_ & enter each of the following commands.
-  * `dotnet add package Microsoft.EntityFrameworkCore -v 5.0.0`
-  * `dotnet add package Pomelo.EntityFrameworkCore.MySql -v 5.0.0-alpha.2  `
-  * `dotnet add package Microsoft.EntityFrameworkCore.Design -v 5.0.0`
+* Add Required Packages: Navigate to the top level of the project directory called _USParkAPI_ & enter each of the following commands:
+```
+  dotnet add package Microsoft.EntityFrameworkCore -v 5.0.0
+  dotnet add package Pomelo.EntityFrameworkCore.MySql -v 5.0.0-alpha.2
+  dotnet add package Microsoft.EntityFrameworkCore.Design -v 5.0.0
+```
   * Protect Your MySQL Password: Enter `touch .gitignore` & `touch appsettings.json` in the command line
 * Add the following code to _appsettings.json_ & update the server, port, and user id & password as necessary
   ```{
