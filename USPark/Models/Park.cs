@@ -1,9 +1,7 @@
 using System;
 
-namespace USPark
-{
-    public class Park
-    {
+namespace USPark {
+    public class Park {
         public int ParkId { get; set; }
         public string Name { get; set; }
         public string City { get; set; }
@@ -14,3 +12,8 @@ namespace USPark
         public bool ADA { get; set; }
     }
 }
+
+//add:
+// description
+// links to actual park page
+// conditions
