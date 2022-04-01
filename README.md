@@ -36,19 +36,18 @@ An API that functions as a US Parks archive for national, state and city parks. 
 * [Entity Framework Core 2.2.6](https://docs.microsoft.com/en-us/ef/core/)
 <!-- * [Swagger - NSwag 13.3.0](https://docs.microsoft.com/en-us/aspnet/core/tutorials/getting-started-with-nswag?view=aspnetcore-3.1&tabs=visual-studio) -->
 * [Postman](postman.com)
-------------------------------
 #
-## Setup & Installation
+### Setup & Installation
 * Download Microsoft .NET Core: [Mac users click here](https://dotnet.microsoft.com/download/thank-you/dotnet-sdk-2.2.106-macos-x64-installer) OR [Windows users click here](https://dotnet.microsoft.com/download/thank-you/dotnet-sdk-2.2.203-windows-x64-installer)
 * Install dotnet script: Enter the command ``dotnet tool install -g dotnet-script`` in terminal
 * Install MySQL Workbench: [Download and install the appropriate version of MySQL Workbench](https://dev.mysql.com/downloads/workbench/)
 * Install Postman: (Optional) [Download and install Postman](https://www.postman.com/downloads/)
 * Clone Repo: In your terminal, navigate to your desktop or other desired location and enter `git clone https://github.com/jessb-epicodus/USParkAPI.Solution.git`
 * Add Required Packages: Navigate to the top level of the project directory called _USPark_ & enter each of the following commands.
-** `dotnet add package Microsoft.EntityFrameworkCore -v 5.0.0`
-** `dotnet add package Pomelo.EntityFrameworkCore.MySql -v 5.0.0-alpha.2  `
-** `dotnet add package Microsoft.EntityFrameworkCore.Design -v 5.0.0`
-** Protect Your MySQL Password: Enter `touch .gitignore` & `touch appsettings.json` in the command line
+  * `dotnet add package Microsoft.EntityFrameworkCore -v 5.0.0`
+  * `dotnet add package Pomelo.EntityFrameworkCore.MySql -v 5.0.0-alpha.2  `
+  * `dotnet add package Microsoft.EntityFrameworkCore.Design -v 5.0.0`
+  * Protect Your MySQL Password: Enter `touch .gitignore` & `touch appsettings.json` in the command line
 * Add the following code to _appsettings.json_ & update the server, port, and user id & password as necessary
   ```{
     "Logging": {
@@ -67,9 +66,8 @@ An API that functions as a US Parks archive for national, state and city parks. 
 * Update Database: Enter `dotnet ef migrations add <MigrationName>` & `dotnet ef database update` in the terminal
 * Install Dependecies: Enter `dotnet restore` in your terminal
 * Try Out This Web App: Enter `dotnet run` in the command line and navigte navigate to _http://localhost:5000/_ in Postman or your browser
-------------------------------
 #
-## API Documentation
+### API Documentation
 Explore the API endpoints in Postman or a browser. You will not be able to utilize authentication in a browser.
 <!-- ### Using Swagger Documentation 
 To explore the USPark API with NSwag, launch the project using `dotnet run` with the Terminal or Powershell, and input the following URL into your browser: `http://localhost:5000/swagger`
@@ -85,12 +83,6 @@ In order to be authorized to use the POST, PUT, DELETE functionality of the API,
 }
 ```
 * The token will be generated in the response. Copy and paste it as the Token paramenter in the Authorization tab. -->
-
-* Example Query: _https://localhost:5000/api/parks/?name=Yellowstone_
-
-To use default, _don't include_ `limit` and `start` or set them equal to zero.
-
-..........................................................................................
 
 * Endpoints: Use base URL: _https://localhost:5000_
 * Example Query: _https://localhost:5000/api/parks_
@@ -109,13 +101,11 @@ To use default, _don't include_ `limit` and `start` or set them equal to zero.
 ```
 ..........................................................................................
 * HTTP Request
-```
-GET /api/parks
-POST /api/parks
-GET /api/parks/{id}
-PUT /api/parks/{id}
-DELETE /api/parks/{id}
-```
+  * GET /api/parks
+  * POST /api/parks
+  * GET /api/parks/{id}
+  * PUT /api/parks/{id}
+  * DELETE /api/parks/{id}
 * Path Parameters
 | Parameter | Type | Default | Required | Description |
 | :---: | :---: | :---: | :---: | --- |
@@ -125,10 +115,10 @@ DELETE /api/parks/{id}
 | managedBy | string | none | false | Return matches by who manages the park
 | activities | string | none | false | Return matches by activities
 | amenities | string | none | false | Return matches by amenities
-| ada | bool | none | false | Return matches if ADA
+| ada | bool | none | false | Return matches if true
 
 * Example Query: _https://localhost:5000/api/parks?state=oregon&state=portland_
-Sample JSON Response
+* Sample JSON Response
 ```
 {
   "parkId": 5,
@@ -140,18 +130,16 @@ Sample JSON Response
   "amenities": "",
   "ada": true
 }
-------------------------------
-
-## Known Bugs
+```
+#
+### Known Bugs
 
 * This is not a real API, which is the greatest shame of all.
-
-## License
-
+#
+### License
 Copyright (c) _Mar 2022_ _Jessi B_
-
-## Contact
-
+#
+### Contact
 _If you run into any issues or have questions, ideas or concerns or wish to make a contribution to the code see contact information below._
 * Jessi B <jessb.epicodus@gmail.com>
 ------------------------------
