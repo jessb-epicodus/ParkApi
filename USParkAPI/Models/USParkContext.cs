@@ -14,7 +14,7 @@ namespace USParkAPI.Models {
                     new Park { ParkId = 3, Name = "Grand Teton", City = "Jackson", State = "Wyoming", ManagedBy = "National Park Service", Activities = "hiking, camping", Amenities = "lots", ADA = true },
                     new Park { ParkId = 4, Name = "Molalla River Recreation Area", City = "Molalla", State = "Oregon", ManagedBy = "Bureau of Land Management", Activities = "fishing", Amenities = "restrooms", ADA = true },
                     new Park { ParkId = 5, Name = "Forest Park", City = "Portland", State = "Oregon", ManagedBy = "Portland Parks and Recreation", Activities = "trail running", Amenities = "", ADA = true }
-        );
+                );
         }
         public DbSet<Park> Parks { get; set; }
     }
