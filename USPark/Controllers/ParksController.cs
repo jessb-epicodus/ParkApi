@@ -18,12 +18,15 @@ namespace USPark.Controllers {
 
     // GET api/parks?endpoint  (read)
     [HttpGet]
-    public async Task<ActionResult<IEnumerable<Park>>> Get(string city, string state, string managedBy, string activities, string amenities, string events, bool ada) {
+    public async Task<ActionResult<IEnumerable<Park>>> Get(string name, string city, string state, string managedBy, string activities, string amenities, bool ada) {
       var query = _db.Parks.AsQueryable();
+      if (name != null) {
+        query = query.Where(entry => entry.Name == name);
+      }
       if (city != null) {
         query = query.Where(entry => entry.City == city);
       }
-      if (state != 0) {
+      if (state != null) {
         query = query.Where(entry => entry.State == state);
       }
       if (managedBy != null) {
@@ -35,10 +38,7 @@ namespace USPark.Controllers {
       if (amenities != null) {
         query = query.Where(entry => entry.Amenities == amenities);
       }
-      if (events != null) {
-        query = query.Where(entry => entry.Events == events);
-      }
-      if (ada != null) {
+      if (ada == true) {
         query = query.Where(entry => entry.ADA == ada);
       }
       return await _db.Parks.ToListAsync();
@@ -49,7 +49,7 @@ namespace USPark.Controllers {
     public async Task<ActionResult<Park>> GetPark(int id) {
       var park = await _db.Parks.FindAsync(id);
       if (park == null) {
-          return NotFound();
+        return NotFound();
       }
       return park;
     }
@@ -62,7 +62,7 @@ namespace USPark.Controllers {
       return CreatedAtAction(nameof(GetPark), new { id = park.ParkId }, park);; // returns Park object; status: "201, Created"
     }
 
-    // PUT: api/parks  (update)
+    // PUT: api/parks/${id}  (update)
     [HttpPut("{id}")]
     public async Task<IActionResult> Put(int id, Park park) {
       if (id != park.ParkId) {
@@ -81,6 +81,9 @@ namespace USPark.Controllers {
       }
       return NoContent();
     }
+    private bool ParkExists(int id){
+      return _db.Parks.Any(e => e.ParkId == id);
+    }
 
     // DELETE: api/parks  (delete)
     [HttpDelete("{id}")]
@@ -92,9 +95,6 @@ namespace USPark.Controllers {
       _db.Parks.Remove(park);
       await _db.SaveChangesAsync();
       return NoContent();
-    }
-    private bool ParkExists(int id) {
-      return _db.Parks.Any(e => e.ParkId == id);
     }
   }
 }
