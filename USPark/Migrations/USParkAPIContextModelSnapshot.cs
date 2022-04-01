@@ -2,12 +2,12 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using USPark.Models;
+using USParkAPI.Models;
 
-namespace USPark.Migrations
+namespace USParkAPI.Migrations
 {
-    [DbContext(typeof(USParkContext))]
-    partial class USParkContextModelSnapshot : ModelSnapshot
+    [DbContext(typeof(USParkAPIContext))]
+    partial class USParkAPIContextModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)
         {
@@ -16,7 +16,7 @@ namespace USPark.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 64)
                 .HasAnnotation("ProductVersion", "5.0.0");
 
-            modelBuilder.Entity("USPark.Park", b =>
+            modelBuilder.Entity("USParkAPI.Park", b =>
                 {
                     b.Property<int>("ParkId")
                         .ValueGeneratedOnAdd()
@@ -72,7 +72,7 @@ namespace USPark.Migrations
                         },
                         new
                         {
-                            ParkId = 4,
+                            ParkId = 3,
                             ADA = true,
                             Activities = "hiking, camping",
                             Amenities = "lots",
@@ -83,7 +83,7 @@ namespace USPark.Migrations
                         },
                         new
                         {
-                            ParkId = 5,
+                            ParkId = 4,
                             ADA = true,
                             Activities = "fishing",
                             Amenities = "restrooms",
@@ -94,7 +94,7 @@ namespace USPark.Migrations
                         },
                         new
                         {
-                            ParkId = 6,
+                            ParkId = 5,
                             ADA = true,
                             Activities = "trail running",
                             Amenities = "",

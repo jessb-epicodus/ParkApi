@@ -5,14 +5,14 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using USPark.Models;
+using USParkAPI.Models;
 
-namespace USPark.Controllers {
+namespace USParkAPI.Controllers {
   [Route("api/[controller]")]
   [ApiController]
   public class ParksController : ControllerBase {
-    private readonly USParkContext _db;
-    public ParksController(USParkContext db) {
+    private readonly USParkAPIContext _db;
+    public ParksController(USParkAPIContext db) {
       _db = db;
     }
 
@@ -41,7 +41,7 @@ namespace USPark.Controllers {
       if (ada == true) {
         query = query.Where(entry => entry.ADA == ada);
       }
-      return await _db.Parks.ToListAsync();
+      return await query.ToListAsync();
     }
     
     // GET: api/parks/id  (read)

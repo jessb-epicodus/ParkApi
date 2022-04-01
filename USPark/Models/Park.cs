@@ -1,6 +1,6 @@
 using System;
 
-namespace USPark {
+namespace USParkAPI {
     public class Park {
         public int ParkId { get; set; }
         public string Name { get; set; }

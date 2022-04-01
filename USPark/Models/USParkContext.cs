@@ -1,8 +1,8 @@
 using Microsoft.EntityFrameworkCore;
 
-namespace USPark.Models {
-    public class USParkContext : DbContext {
-        public USParkContext(DbContextOptions<USParkContext> options)
+namespace USParkAPI.Models {
+    public class USParkAPIContext : DbContext {
+        public USParkAPIContext(DbContextOptions<USParkAPIContext> options)
             : base(options) {
         }
         protected override void OnModelCreating(ModelBuilder builder)
