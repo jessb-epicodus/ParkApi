@@ -46,8 +46,8 @@ An API that functions as a US Parks archive for national, state and city parks. 
   dotnet add USParkAPI.csproj package Swashbuckle.AspNetCore -v 6.2.3
   dotnet add package Microsoft.AspNetCore.Mvc.Versioning --version 5.0.0
 ```
-  * Protect Your MySQL Password: Enter `touch .gitignore` & `touch appsettings.json` in the command line
-* Add the following code to _appsettings.json_ & update the server, port, and user id & password as necessary
+* Protect Your MySQL Password: Enter `touch .gitignore` & `touch appsettings.json` in the command line
+* Add the following code to _appsettings.json_ & update the server, port, and user id & password as necessary:
   ```
   {
     "Logging": {
@@ -62,26 +62,13 @@ An API that functions as a US Parks archive for national, state and city parks. 
       "DefaultConnection": "Server=localhost;Port=3306;database=US_park;uid=root;pwd=YOUR PASSWORD;"
     }
   }
-```
+  ```
 * Add _*/appsettings.json_ to _.gitignore_
 * Update Database: Enter `dotnet ef migrations add <MigrationName>` & `dotnet ef database update` in the terminal
 * Install Dependecies: Enter `dotnet restore` in your terminal
 * Try Out This Web App: Enter `dotnet run` in the command line and either,
   * Navigte to _http://localhost:5000/_ in Postman - or -
   * Navigate to _http://localhost:5000/swagger_ in your browser
-
-<!-- ### Using the JSON Web Token
-In order to be authorized to use the POST, PUT, DELETE functionality of the API, please authenticate yourself through Postman.
-* Open Postman and create a POST request using the URL: `http://localhost:5000/api/users/authenticate`
-* Add the following query to the request as raw data in the Body tab:
-
-```
-{
-  "UserName": "CoffeeAdmin",
-  "Password": "epicodus"
-}
-```
-* The token will be generated in the response. Copy and paste it as the Token paramenter in the Authorization tab. -->
 * HTTP Requests
   * GET /api/parks
   * POST /api/parks
@@ -92,18 +79,18 @@ In order to be authorized to use the POST, PUT, DELETE functionality of the API,
 * Example Query: _https://localhost:5000/api/parks_
 * Sample JSON Response:
 ```
-{
-  "parkId": 5,
-  "name": "Molalla River Recreation Area",
-  "city": "Molalla",
-  "state": "Oregon",
-  "managedBy": "Bureau of Land Management",
-  "activities": "fishing",
-  "amenities": "restrooms",
-  "ada": true
-}
+  {
+    "parkId": 5,
+    "name": "Molalla River Recreation Area",
+    "city": "Molalla",
+    "state": "Oregon",
+    "managedBy": "Bureau of Land Management",
+    "activities": "fishing",
+    "amenities": "restrooms",
+    "ada": true
+  }
 ```
-* Path Parameters
+* ##### Path Parameters 
 | Parameter | Type | Default | Required | Description |
 | :---: | :---: | :---: | :---: | --- |
 | name | string | none | required | Return matches by name |
@@ -129,10 +116,10 @@ In order to be authorized to use the POST, PUT, DELETE functionality of the API,
 ```
 #
 ### Known Bugs
-* This is not a real API, which is the greatest shame of all.
+This is not a real API, which is the greatest shame of all.
 #
 ### License
-Copyright (c) _Mar 2022_ _Jessi B_
+Copyright (c)  _Mar 2022_  _Jessi B_
 #
 ### Contact
 _If you run into any issues or have questions, ideas or concerns or wish to make a contribution to the code see contact information below._
