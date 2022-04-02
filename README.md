@@ -90,7 +90,7 @@ An API that functions as a US Parks archive for national, state and city parks. 
     "ada": true
   }
 ```
-* ##### Path Parameters 
+* #### Path Parameters 
 | Parameter | Type | Default | Required | Description |
 | :---: | :---: | :---: | :---: | --- |
 | name | string | none | required | Return matches by name |
@@ -123,7 +123,7 @@ Copyright (c)  _Mar 2022_  _Jessi B_
 #
 ### Contact
 _If you run into any issues or have questions, ideas or concerns or wish to make a contribution to the code see contact information below._
-* Jessi B <jessb.epicodus@gmail.com>
+* [Jessi B](jessb.epicodus@gmail.com)
 ------------------------------
 
 <center><a href="#">Return to Top</a></center>
